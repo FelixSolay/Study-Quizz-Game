@@ -1,8 +1,11 @@
 # Study-Quizz-Game
 Un viejo proyecto en Python que he usado para estudiar en la universidad, revivido, reversionado y mejorado.
+
 La idea principal era armar un juego dinámico de cuestionarios al que se le puedan cargar opciones y respuestas leyendo distintos archivos.
+
 En principio se usaban archivos txt para las respuestas, pero se decidió pasar a JSON por seguridad, confiabilidad y escalabilidad. 
-La interfaz del juego está diseñada sobre la biblioteca **Tkinter**
+
+La interfaz del juego está diseñada sobre la biblioteca **Tkinter**.
 
 ## Características
 - **Carga dinámica:** Lee archivos JSON para generar preguntas y opciones automáticamente.
