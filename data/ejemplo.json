@@ -1,0 +1,16 @@
+{
+  "titulo": "Geografía Mundial",
+  "opciones": {
+    "ARGENTINA": 10,
+    "FRANCIA": 20,
+    "JAPON": 30,
+    "ITALIA": 40,
+    "ALEMANIA": 50
+  },
+  "preguntas": [
+    { "texto": "¿A qué país pertenece la ciudad de París?", "id": 20 },
+    { "texto": "¿A qué país pertenece la ciudad de Tokio?", "id": 30 },
+    { "texto": "¿A qué país pertenece la ciudad de Roma?", "id": 40 },
+    { "texto": "¿A qué país pertenece la ciudad de Buenos Aires?", "id": 10 }
+  ]
+}
