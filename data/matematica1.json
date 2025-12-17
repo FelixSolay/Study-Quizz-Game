@@ -1,0 +1,28 @@
+{
+  "titulo": "Conceptos Matemáticos",
+  "opciones": {
+    "NUMERO PRIMO": 10,
+    "HIPOTENUSA": 20,
+    "FRACCION PROPIA": 30,
+    "RADIO": 40,
+    "LOGARITMO": 50
+  },
+  "preguntas": [
+    {
+      "texto": "Número natural mayor que 1 que tiene únicamente dos divisores distintos: él mismo y el 1.",
+      "id": 10
+    },
+    {
+      "texto": "Es el lado de mayor longitud de un triángulo rectángulo.",
+      "id": 20
+    },
+    {
+      "texto": "Distancia desde el centro de un círculo hasta cualquier punto de su borde.",
+      "id": 40
+    },
+    {
+      "texto": "Fracción donde el numerador es menor que el denominador.",
+      "id": 30
+    }
+  ]
+}

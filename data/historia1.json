@@ -1,0 +1,28 @@
+{
+  "titulo": "Historia Argentina",
+  "opciones": {
+    "BELGRANO": 1,
+    "SAN MARTIN": 2,
+    "SARMIENTO": 3,
+    "MESSI": 4,
+    "JUANA AZURDUY": 5
+  },
+  "preguntas": [
+    {
+      "texto": "Creó la bandera argentina y la izó por primera vez en Rosario en 1812.",
+      "id": 1
+    },
+    {
+      "texto": "Lideró el Cruce de los Andes para liberar Chile y Perú.",
+      "id": 2
+    },
+    {
+      "texto": "Conocido como el 'Padre del aula' por su gran impulso a la educación pública.",
+      "id": 3
+    },
+    {
+      "texto": "Heroína de la independencia que luchó en el Alto Perú junto a las milicias.",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "titulo": "Conceptos de POO",
+  "opciones": {
+    "CLASE": 100,
+    "ENCAPSULAMIENTO": 200,
+    "HERENCIA": 300,
+    "POLIMORFISMO": 400,
+    "INSTANCIA": 500
+  },
+  "preguntas": [
+    {
+      "texto": "Es el 'plano' o 'plantilla' a partir del cual se crean los objetos.",
+      "id": 100
+    },
+    {
+      "texto": "Capacidad de un objeto de tomar diferentes formas o responder de distintas maneras a una misma función.",
+      "id": 400
+    },
+    {
+      "texto": "Mecanismo por el cual un objeto oculta sus datos internos y solo permite acceso a través de métodos.",
+      "id": 200
+    },
+    {
+      "texto": "Permite que una nueva clase adquiera las propiedades y métodos de una clase existente.",
+      "id": 300
+    }
+  ]
+}

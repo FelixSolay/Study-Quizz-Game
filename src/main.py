@@ -69,12 +69,21 @@ class Game:
         try:
             with open(archivo, 'r', encoding='utf-8') as f:
                 self.datos = json.load(f)
-            self.puntos = 0
-            self.preguntas_mostradas = []
-            self.actualizar_puntos()
-            self.siguiente_pregunta()
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo leer el archivo: {e}")
+            return
+
+        # Validar número de opciones
+        try:
+            num_opciones = int(self.num_opciones.get())
+        except ValueError:
+            messagebox.showerror("Error", "Ingresa un número válido para las opciones")
+            return
+
+        self.puntos = 0
+        self.preguntas_mostradas = []
+        self.actualizar_puntos()
+        self.siguiente_pregunta()
 
     def generar_botones(self):
         # Limpiar botones anteriores
@@ -139,12 +148,8 @@ class Game:
 
     def siguiente_pregunta(self):
         if self.datos and self.datos["preguntas"]:
-            # Validar número de opciones
-            try:
-                num_opciones = int(self.num_opciones.get())
-            except ValueError:
-                messagebox.showerror("Error", "Ingresa un número válido para las opciones")
-                return
+            # Obtener número de opciones ya validado
+            num_opciones = int(self.num_opciones.get())
 
             total_opciones_json = len(self.datos["opciones"])
             
@@ -159,9 +164,15 @@ class Game:
             preguntas_disponibles = [p for p in self.datos["preguntas"] if p not in self.preguntas_mostradas]
             
             if not preguntas_disponibles:
-                messagebox.showinfo("Fin del juego", f"¡Completaste todas las preguntas! Total de puntos: {self.puntos}")
-                self.preguntas_mostradas = []
-                preguntas_disponibles = self.datos["preguntas"]
+                respuesta = messagebox.askyesno("Fin del juego", f"¡Completaste todas las preguntas! Total de puntos: {self.puntos}\n\n¿Deseas jugar de nuevo?")
+                if respuesta:
+                    self.puntos = 0
+                    self.preguntas_mostradas = []
+                    self.actualizar_puntos()
+                    self.siguiente_pregunta()
+                else:
+                    self.limpiar_pantalla()
+                return
             
             self.pregunta_actual = random.choice(preguntas_disponibles)
             self.preguntas_mostradas.append(self.pregunta_actual)
@@ -170,6 +181,15 @@ class Game:
 
     def actualizar_puntos(self):
         self.lbl_puntos.config(text=f"Puntos: {self.puntos}")
+
+    def limpiar_pantalla(self):
+        self.lbl_pregunta.config(text="Selecciona un tema para comenzar")
+        for widget in self.frame_respuestas.winfo_children():
+            widget.destroy()
+        self.puntos = 0
+        self.actualizar_puntos()
+        self.datos = None
+        self.preguntas_mostradas = []
 
 if __name__ == "__main__":
     root = tk.Tk()
